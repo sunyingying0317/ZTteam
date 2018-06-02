@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>知涂科目</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<link rel="stylesheet" href="./css/subject.css">
+</head>
+<body>
+	
+	<div id="main">
+		<div class="tabulation">
+			<ul class="clearfix">
+				 <li @click="clickGrade" :class="isShowGrade ? 'selected' : ''">{{ grade }}</li>
+				 <li @click="clickSubject" :class="isShowSubject ? 'selected' : '' ">{{ subject }}<i></i></li>
+				 <li @click="clickType" :class="isShowType ? 'selected' : '' ">{{ teacherType }}<i></i></li>
+			 </ul>
+			 <div class="tabList" v-if="condition" :class="isShowAllSelect ? 'show' : 'hide' ">
+			 	<div class="tab" :class="isShowGrade ? 'show' : 'hide' ">
+			 		<span :class="item.isSelected ? 'selected' : '' " v-for="item in condition.grade" @click="clickItem(item)">{{item.label}}</span>
+			 	</div>
+			 	<div class="tab" :class="isShowSubject ? 'show' : 'hide' ">
+			 		<span :class="item.isSelected ? 'selected' : '' " v-for="item in condition.subject" @click="clickItem(item)">{{ item.label }}</span>
+			 	</div>
+			 	<div class="tab" :class="isShowType ? 'show' : 'hide' ">
+			 		<span :class="item.isSelected ? 'selected' : '' " v-for="item in condition.type" @click="clickItem(item)">{{item.label}}</span>
+			 	</div>
+			 </div>
+		</div>	
+
+
+		<div class="content">
+			<ul>
+				<li v-for="item in list">				
+					<div class="container">
+						<!-- v-bind:href="'detail.html?id='+item.id" -->
+							<img :src="item.image" height="70" width="70">
+							<p class="container-name">{{item.name}}</p>
+							<span>{{item.subject[0].label}}</span>
+							<span>{{item.grade[0].label}}</span>
+							<a class="last">已授{{item.teach_time}}课时</a>
+							<p class="container-age">9年教龄</p>
+							<p class="container-bottom">
+							<a class="container-photo"></a>{{item.type[0].label}}</span>
+							</p>
+						</a>
+					</div>				
+				</li>
+			</ul>
+		</div>
+		<!-- <div class="hot-list">
+			<div v-for="item in list" class="hot-teacher">
+				<i><img :src="item.image"></i>
+				<div class="hot-right">
+					<p class="title"><span class="teacher">{{ item.name }}</span><span v-for="subItem in item.subject" class="sub">{{ subItem.label }}</span><span  v-for="item in item.grade"  class="lev">{{item.label}}</span><span class="tip">{{item.teach_time}}小时</span></p>
+					<p>{{item.teach_year}}年教龄</p>
+					<p  v-for="item in item.type" class="type">{{item.label}}</p>
+				</div>
+			</div>
+		</div> -->
+		<!-- <div class="content">
+			<a href="">
+				<div class="container">
+				<img :src="list.image" height="75" width="75">
+				<p class="container-name">{{list.name}}</p>
+				<span>{{list.subject[0].label}}</span>
+				<strong>{{list.grade[0].label}}</strong>
+				<a class="last">{{list.price}}</a>
+				<p class="container-age">{{list.teach_year}}年教龄</p>
+				<p class="container-bottom"><a class="container-photo"></a>{{list.type[0].label}}</p>
+				<em class="lasted">已授课{{list.teach_time}}小时</em>
+			</div>
+			</a>
+		</div> -->
+	</div>
+	<script src="./js/subject.js"></script>
+</body>
+</html>

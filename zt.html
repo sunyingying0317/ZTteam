@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>知途教育</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+
+	<link rel="stylesheet" href="./css/zt.css">
+
+	<link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+</head>
+<body>
+	<div id="main">	
+		<div class="top">
+			<div class="top-left">
+				<img src="./images/zt.png" alt="" width="200" height="50">
+			</div>
+				<a href="./login.html">
+				<div class="top-right">
+					<img src="./images/my.png" alt="" width="90" height="50">
+				</div>
+			</a>
+		</div>
+		<div class="photo">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				    <div v-for="item in banner" class="swiper-slide">
+				        <img :src="item.image">
+				    </div>
+				    <div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+		<a href="./subject.html">
+			<div class="subject">
+				<ul class="clearfix">
+					<li v-for="item in lists">
+						<img :src="item.icon" alt="" height="40" height="40">
+						<p>{{item.name}}</p>
+					</li>
+				</ul>
+			</div>
+		</a>
+		<div class="teacher">
+			<p>热门教师</p>
+		</div>
+		<div class="content">
+			<ul>
+				<li v-for="item in list">				
+					<div class="container">
+						<a v-bind:href="'detail.html?id='+item.id">
+							<img :src="item.image" height="70" width="70">
+							<p class="container-name">{{item.name}}</p><span>{{item.subject[0].label}}</span><strong>小</strong><strong>初</strong><strong>高</strong><a class="last">已授200课时</a>
+							<p class="container-age">9年教龄</p>
+							<p class="container-bottom"><a class="container-photo"></a>{{item.type[0].label}}<span class="container-photo"></span>{{item.extend_tag[0].label}}</p>
+						</a>
+					</div>				
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="./js/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="./js/zt.js"></script>	
+
+</body>
+</html>

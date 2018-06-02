@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>详情页</title>
+	<link rel="stylesheet" href="./css/detail.css">
+
+</head>
+<body>
+	<div id="main">
+		<div>
+			<div class="container">
+				<img :src="list.image" height="75" width="75">
+				<p class="container-name">{{list.name}}</p>
+				<span>{{list.subject[0].label}}</span>
+				<strong>{{list.grade[0].label}}</strong>
+				<a class="last">{{list.price}}</a>
+				<p class="container-age">{{list.teach_year}}年教龄</p>
+				<p class="container-bottom"><a class="container-photo"></a>{{list.type[0].label}}</p>
+				<em class="lasted">已授课{{list.teach_time}}小时</em>
+			</div>
+		</div>
+		<div class="person">
+			<div class="individual">
+				<div class="individualContent">
+					<p class="individualContentPhoto"><a href=":;"></a>个人简历</p>
+					<div class="details">
+						<p>{{list.intro}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="experience">
+				<div class="experienceContent">
+					<p class="experiencePhoto">个人简历</p>
+					<p class="education">毕业班化学教学</p>
+				</div>
+			</div>
+			<div class="success">
+				<div class="successContent">
+					<div class="successHead"><p>成功案例</p></div>
+					<div class="successDetails">
+						<ul class="clearfix">
+							<li class="successdetailsTop">
+								<p class="successdetailsHead">{{list.teacher_case[0].title}}</p>
+								<p class="successdetailsContent">{{list.teacher_case[0].content}}</p>
+							</li>
+							<li>
+								<p class="successdetailsHead">{{list.teacher_case[1].title}}</p>
+								<p class="successdetailsContent">{{list.teacher_case[1].content}}</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="satisfy">
+				<div class="satisfyContent">
+					<p class="satisfycontent">
+      					-------满意就预约吧--------
+    				</p>
+   					 <!-- <hr> -->
+				</div>
+		</div>
+		<a href="./login.html">
+			<div class="order">
+				<div class="orderCollect">
+					<span>收藏</span>
+				</div>
+				<div class="orderTrial">预约试讲</div>
+			</div>
+		</a>
+	</div>
+
+	<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+	<script src="./js/detail.js"></script>
+</body>
+</html>

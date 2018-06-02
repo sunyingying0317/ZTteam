@@ -1,0 +1,140 @@
+html,body,ul,li,a,p,i,span{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #f5f5f5;
+	font-size: 0.2rem;
+	height: 100%;
+	width: 100%;
+}
+ul{
+	list-style: none;
+}
+a{
+	color: #000;
+	font-size: 0.2rem;
+}
+.tabulation li{
+	/*display: inline-block;*/
+	position: relative;
+	float: left;
+	width: 33.33%;
+	text-align: center;
+	background-color:#fff;
+	height: 2.2rem; 
+	border: none;
+	line-height: 2.2rem;
+}
+.clearfix::after{
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+.tabList{
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	background-color: #fff;
+}
+.tab{
+	border-top:0.1rem solid #dde2f0;
+	padding-top: 2%;
+}
+.tab span{
+	display: block;
+	float: left;
+	width:20%;
+	height: 3rem;
+	line-height: 3rem;
+	margin-left: 4%;
+	margin-bottom: 2%;
+	text-align: center;
+	background-color: #fff;
+}
+.tabulation li i{
+	display: block;
+	position: absolute;
+	top: 0.4rem;
+	left: 0;
+	background-color: #dde2f0;
+	width: 0.1rem;
+	height: 1.2rem;
+	z-index: 99;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+
+.selected {
+    color: green;
+}
+
+
+
+
+.container{
+	position: relative;
+	height: 8rem;
+	margin-bottom: 1rem;
+}
+.container img{
+	position: absolute;
+	top: 0.8rem;
+	left: 0.5rem;
+	display: block;
+}
+.container .container-name{
+	display: inline-block;
+	float: left;
+	padding: 0.6rem 0 0 6rem;
+}
+.container span{
+	display: inline-block;
+	width: 3rem 1rem;
+	margin: 0.6rem 0 0 1rem;
+	background-color: green;
+}
+.container strong{
+	display: inline-block;
+	margin-left: 0.3rem;
+	text-align: center;
+	width: 1.2rem;
+	height: 1.2rem;
+	border:0.1rem solid green;
+}
+.container .last{
+	display: inline-block;
+	float: right;
+	padding: 0.6rem 1rem 0 0;
+	text-decoration: none;
+	color: #777;
+}
+.container .container-age{
+	/*display: inline-block;*/
+	/*float: left;*/
+	color: #777;
+	padding:0.5rem 0 0 6rem;
+}
+.container-bottom .container-photo{
+	display: inline-block;
+	position: absolute;
+	bottom: 2.4rem;
+	left: 6rem;
+	margin-top:0.1rem; 
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../images/xuan.png);
+	background-repeat: no-repeat;
+	background-size: 1rem 1rem;
+}
+.container .container-bottom{
+	display: inline-block;
+	float: left;
+	padding:1rem 0 0 7.5rem;
+	/*color: #777;*/
+}	
